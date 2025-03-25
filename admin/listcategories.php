@@ -39,7 +39,12 @@ require('includes/header.php');
                                             <td><?=$row['name']?></td>
                                             <td><?=$row['slug']?></td>
                                             <td><?=$row['status']?></td>
-                                            <td>Edit | Delete</td>
+                                            <td>
+                                            <a class="btn btn-warning" href="editcategory.php?id=<?=$row['id']?>">Edit</a> 
+                                            <a class="btn btn-danger" 
+                                            href="deletecategory.php?id=<?=$row['id']?>"
+                                            onclick="return confirm('Bạn chắc chắn muốn xóa mục này?');">Delete</a>
+                                        </td>
                                         </tr>
                                         <?php
     }

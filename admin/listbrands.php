@@ -30,7 +30,7 @@ require('includes/header.php');
 
                                     <?php
     require('../db/connectDB.php');
-    $sql_str = "select * from brands order by name";
+    $sql_str = "select * from brands order by id";
     $result = mysqli_query($conn, $sql_str);
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
@@ -39,7 +39,12 @@ require('includes/header.php');
                                             <td><?=$row['name']?></td>
                                             <td><?=$row['slug']?></td>
                                             <td><?=$row['status']?></td>
-                                            <td>Edit | Delete</td>
+                                            <td>
+                                            <a class="btn btn-warning" href="editbrand.php?id=<?=$row['id']?>">Edit</a> 
+                                            <a class="btn btn-danger" 
+                                            href="deletebrand.php?id=<?=$row['id']?>"
+                                            onclick="return confirm('Bạn chắc chắn muốn xóa mục này?');">Delete</a>
+                                        </td>
                                         </tr>
                                         <?php
     }
