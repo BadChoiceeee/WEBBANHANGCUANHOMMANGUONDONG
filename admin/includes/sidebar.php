@@ -38,7 +38,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Các chức năng:</h6>
             <a class="collapse-item" href="./listbrands.php">Liệt kê</a>
-            <a class="collapse-item" href="cards.html">Thêm mới</a>
+            <a class="collapse-item" href="./themsanpham.php">Thêm mới</a>
         </div>
     </div>
 </li>
@@ -69,10 +69,8 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Các chức năng:</h6>
-            <a class="collapse-item" href="utilities-color.html">Sản phẩm </a>
-            <a class="collapse-item" href="utilities-border.html">Thêm mới</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <a class="collapse-item" href="./listsanpham.php">Sản phẩm </a>
+            <a class="collapse-item" href="./themsanpham.php">Thêm mới</a>
         </div>
     </div>
 </li>
