@@ -1,3 +1,6 @@
+<?php
+    //session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -155,9 +158,24 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="cart.php"><i class="fa fa-shopping-bag"></i> <span>
+                            <?php
+                                $cart = [];
+                                if (isset($_SESSION['cart'])) {
+                                    $cart = $_SESSION['cart'];
+                                }
+                                $count = 0;//hien thi so luong san pham trong gio hang
+                                $tongtien = 0;
+                                foreach ($cart as $item) {
+                                    $count += $item['qty'];
+                                    $tongtien += $item['qty'] * $item['disscounted_price'];
+                                }
+                                //hien thi so luon
+                                echo $count;
+                            ?>
+                            </span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">Tổng tiền: <span><?=number_format($tongtien, 0, '', '.'). "VND"?></span></div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $is_homepage = true;
 require_once('components/header.php'); 
 ?>
