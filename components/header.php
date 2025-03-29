@@ -99,7 +99,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li><i class="fa fa-envelope"></i> manguondong.Hello.com</li>
                                 <li>Free Shipping for all Order of $99</li>
                             </ul>
                         </div>
@@ -222,12 +222,25 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
+                            <form action="timkiem.php" method="get">
+                            <!-- <div class="hero__search__categories">
+                                All Categories
+                                <span class="arrow_carrot-down"></span> -->
+                                <select name="danhmuc">
+                                    <option value="*">Tất cả danh mục</option>
+                                    <?php
+                                        require('./db/connectDB.php'); 
+                                        $sql_str = "SELECT * FROM categories ORDER BY name";
+                                        $result = mysqli_query($conn, $sql_str);
+                                        
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            <!-- </div> -->
+
+                                <input type="text" name= "tukhoa" placeholder="What do yo u need?">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>

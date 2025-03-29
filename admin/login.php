@@ -5,7 +5,6 @@ if(isset($_POST['btSubmit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     require_once('../db/connectDB.php');
-
     $sql = "SELECT * FROM admins WHERE email='$email' AND password='$password'";
     $result = mysqli_query($conn, $sql);
 
